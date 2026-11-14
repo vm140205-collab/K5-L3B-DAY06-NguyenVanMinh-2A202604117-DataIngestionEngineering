@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed window (page-scoped),800,150,"document_id, source, page, section, year, primary_category, document_type, language, chunk_index, char_len",none,"BAAI/bge-small-en-v1.5 (fastembed 0.9.1, ONNX, 384d)","Cua so co dinh giu chunk ngan va de doan trich, nhung cat giua y nen Hit@3 thap hon chunk theo doan",5/15,8/15,2/5,4/5,"1307 chunk; coherence 1.0/2; 3 cau miss vi evidence bi cat qua 2 chunk"
+B,paragraph/section-aware packing (page-scoped),1200,0,"same as A",none,"BAAI/bge-small-en-v1.5 (fastembed 0.9.1, ONNX, 384d)","Gom doan theo heading giu tron y -> Hit@3 va coherence cao hon A",7/15,10/15,2/5,3/5,"949 chunk; coherence 1.5/2; 5 chunk chi con tieu de + tac gia; q06 evidence bi tach chunk"
+C,same chunks as B,1200,0,"same as A","year / primary_category khi cau hoi co filter","BAAI/bge-small-en-v1.5 (fastembed 0.9.1, ONNX, 384d)","Filter metadata loai nhieu ngoai pham vi -> Hit@1 va do tuan thu filter tang, Hit@3 khong doi",8/15,10/15,2/5,3/5,"949 chunk; filter compliant 3/3 (A va B: 2/3); chi 3 cau co filter nen tac dong nho"

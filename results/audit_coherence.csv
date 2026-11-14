@@ -1,0 +1,399 @@
+strategy,document_id,page,section,char_len,chunk_text,coherence_0_1_2,reason
+A,2004.01625v2,1,,787,"Forward-looking persistent excitation in model predictive
+
+control
+
+Sven Brüggemann a Robert R. Bitmead a
+
+aMechanical & Aerospace Engineering Department, University of California, San Diego, CA 92093-0411, USA, (e-mails:
+
+{sbruegge, rbitmead}@eng.ucsd.edu)
+
+Abstract
+
+This work deals with the problem of simultaneous regulation and model parameter estimation in adaptive model predictive
+control. We propose an adaptive model predictive control and conditions which guarantee a persistently exciting closed loop
+sequence by only looking forward in time into the receding prediction horizon. Earlier works needed to look backwards and
+preserve prior regressor data. Instead, we present a procedure for the offline generation of a persistently exciting reference
+trajectory perturbing the",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2104.10383v1,1,,797,"Stochastic Model Predictive Control for Linear
+Systems with Unbounded Additive Uncertainties
+
+Fei Li, Huiping Li, Member, IEEE, and Yuyao He, Member, IEEE
+
+Abstract—This paper presents two stochastic model predictive
+control methods for linear time-invariant systems subject to
+unbounded additive uncertainties. The new methods are developed by formulating the chance constraints into deterministic
+form, which are treated in analogy with robust constraints, by
+using the probabilistic reachable set. Firstly, the probabilistically
+resolvable time-varying tube-based stochastic model predictive
+control algorithm is designed by employing the time-varying
+probabilistic reachable sets as the tubes. Secondly, by utilizing
+the probabilistic positively invariant set, the probabilistically resolvable",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2206.06841v1,1,,799,"Robust Reinforcement Learning with Distributional Risk-averse formulation
+
+Pierre Clavier 1 2 Stéphanie Allassonnière 2 Erwan Le Pennec 1
+
+Abstract
+
+Robust Reinforcement Learning tries to make predictions more robust to changes in the dynamics
+or rewards of the system. This problem is particularly important when the dynamics and rewards
+of the environment are estimated from the data. In
+this paper, we approximate the Robust Reinforcement Learning constrained with a Φ-divergence
+using an approximate Risk-Averse formulation.
+We show that the classical Reinforcement Learning formulation can be robustified using standard
+deviation penalization of the objective. Two algorithms based on Distributional Reinforcement
+Learning, one for discrete and one for continuous action spaces are proposed and",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2303.13117v1,1,,791,"RLOR: A FLEXIBLE FRAMEWORK OF DEEP REINFORCEMENT LEARNING FOR OPERATION RESEARCH
+
+Ching Pui WAN
+Lenovo Machine Intelligence Center
+Hong Kong
+cpwandeep@gmail.com
+
+Tung LI
+Lenovo Machine Intelligence Center
+Hong Kong
+tonyli537@gmail.com
+
+Jason Min WANG
+Lenovo Machine Intelligence Center
+Hong Kong
+jasonwangm@connect.ust.hk
+
+ABSTRACT
+
+Reinforcement learning has been applied in operation research and has shown
+promise in solving large combinatorial optimization problems. However, existing works focus on developing neural network architectures for certain problems.
+These works lack the flexibility to incorporate recent advances in reinforcement
+learning, as well as the flexibility of customizing model architectures for operation research problems. In this work, we analyze the end-to-end",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2305.03360v1,1,,795,"arXiv:2305.03360v1 [cs.LG] 5 May 2023
+
+A Survey on Offline Model-Based Reinforcement
+
+Learning
+
+Haoyang He
+Electrical and Computer Engineering
+
+Carnegie Mellon University
+
+Pittsburgh, PA 15213
+hhe2@andrew.cmu.edu
+
+Abstract
+
+Model-based approaches are becoming increasingly popular in the field of offline
+reinforcement learning, with high potential in real-world applications due to the
+model’s capability of thoroughly utilizing the large historical datasets available
+with supervised learning techniques. This paper presents a literature review of
+recent work in offline model-based reinforcement learning, a field that utilizes
+model-based approaches in offline reinforcement learning. The survey provides a
+brief overview of the concepts and recent developments in both offline reinforcement",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2308.02391v1,1,,796,"Learning Optimal Admission Control in Partially
+
+Observable Queueing Networks
+
+Jonatha Anselmi1†, Bruno Gaujal1†, Louis-Sébastien Rebuffi1*
+
+1*Univ. Grenoble Alpes, Inria, CNRS, Grenoble INP, LIG, Grenoble,
+38000, France.
+
+*Corresponding author(s). E-mail(s):
+louis-sebastien.rebuffi@univ-grenoble-alpes.fr;
+Contributing authors: jonatha.anselmi@inria.fr; bruno.gaujal@inria.fr;
+
+†These authors contributed equally to this work.
+
+Abstract
+
+We present an efficient reinforcement learning algorithm that learns the optimal admission control policy in a partially observable queueing network. Specifically, only
+the arrival and departure times from the network are observable, and optimality
+refers to the average holding/rejection cost in infinite horizon.
+While reinforcement learning in Partially",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2308.14897v1,1,,794,"Statistically Efficient Variance Reduction with Double
+
+Policy Estimation for Off-Policy Evaluation in
+
+Sequence-Modeled Reinforcement Learning
+
+Hanhan Zhou
+The George Washington University
+
+hanhan@gwu.edu
+
+Tian Lan
+The George Washington University
+
+tlan@gwu.edu
+
+Vaneet Aggarwal
+Purdue University
+vaneet@purdue.edu
+
+Abstract
+
+Offline reinforcement learning aims to utilize datasets of previously gathered
+environment-action interaction records to learn a policy without access to the
+real environment. Recent work has shown that offline reinforcement learning
+can be formulated as a sequence modeling problem and solved via supervised
+learning with approaches such as decision transformer. While these sequence-based
+methods achieve competitive results over return-to-go methods, especially on",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2404.02429v1,1,,785,"AD4RL: Autonomous Driving Benchmarks for
+Offline Reinforcement Learning with Value-based Dataset
+
+Dongsu Lee†, Chanin Eom†, and Minhae Kwon†,∗
+
+Abstract— Offline reinforcement learning has emerged as a
+promising technology by enhancing its practicality through the
+use of pre-collected large datasets. Despite its practical benefits,
+most algorithm development research in offline reinforcement
+learning still relies on game tasks with synthetic datasets.
+To address such limitations, this paper provides autonomous
+driving datasets and benchmarks for offline reinforcement
+learning research. We provide 19 datasets, including realworld human driver’s datasets, and seven popular offline
+reinforcement learning algorithms in three realistic driving
+scenarios. We also provide a unified",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2410.14069v1,1,,796,"Rethinking Optimal Transport in
+
+Offline Reinforcement Learning
+
+Arip Asadulaev1,2 Rostislav Korst4 Alexander Korotin3,1
+
+Vage Egiazarian5,6 Andrey Filchenkov2 Evgeny Burnaev3,1
+
+1AIRI
+2ITMO
+3Skoltech
+4MIPT
+5Yandex
+6HSE University
+aripasadulaev@airi.net
+
+Abstract
+
+We propose a novel algorithm for offline reinforcement learning using optimal
+transport. Typically, in offline reinforcement learning, the data is provided by
+various experts and some of them can be sub-optimal. To extract an efficient policy,
+it is necessary to stitch the best behaviors from the dataset. To address this problem,
+we rethink offline reinforcement learning as an optimal transportation problem.
+And based on this, we present an algorithm that aims to find a policy that maps
+states to a partial distribution of the",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+A,2410.17904v1,1,,794,"Reinforcement Learning under Latent Dynamics:
+
+Toward Statistical and Algorithmic Modularity
+
+Philip Amortila
+philipa4@illinois.edu
+
+Dylan J. Foster
+dylanfoster@microsoft.com
+
+Nan Jiang
+nanjiang@illinois.edu
+
+Akshay Krishnamurthy
+
+akshaykr@microsoft.com
+
+Zakaria Mhammedi
+
+mhammedi@google.com
+
+Abstract
+
+Real-world applications of reinforcement learning often involve environments where agents operate on
+complex, high-dimensional observations, but the underlying (“latent”) dynamics are comparatively simple.
+However, outside of restrictive settings such as small latent spaces, the fundamental statistical requirements
+and algorithmic principles for reinforcement learning under latent dynamics are poorly understood.
+
+This paper addresses the question of reinforcement learning under general",1,cua so 800 ky tu bat dau o tieu de/tac gia va cat giua cau cua abstract; hieu duoc nhung y bi cut
+B,2004.01625v2,1,,1117,"Forward-looking persistent excitation in model predictive
+
+control
+
+Sven Brüggemann a Robert R. Bitmead a
+
+aMechanical & Aerospace Engineering Department, University of California, San Diego, CA 92093-0411, USA, (e-mails:
+
+{sbruegge, rbitmead}@eng.ucsd.edu)
+
+Abstract
+
+This work deals with the problem of simultaneous regulation and model parameter estimation in adaptive model predictive
+control. We propose an adaptive model predictive control and conditions which guarantee a persistently exciting closed loop
+sequence by only looking forward in time into the receding prediction horizon. Earlier works needed to look backwards and
+preserve prior regressor data. Instead, we present a procedure for the offline generation of a persistently exciting reference
+trajectory perturbing the equilibrium. With the new approach we demonstrate exponential convergence of nonlinear systems
+under the influence of the adaptive model predictive control combined with a recursive least squares identifier with forgetting
+factor despite bounded noise. The results are, at this stage, local in state and parameter-estimate space.",2,"tron abstract, ket thuc o cau hoan chinh"
+B,2104.10383v1,1,,154,"Stochastic Model Predictive Control for Linear
+Systems with Unbounded Additive Uncertainties
+
+Fei Li, Huiping Li, Member, IEEE, and Yuyao He, Member, IEEE",1,"chi co tieu de + tac gia (154 ky tu), khong co noi dung"
+B,2206.06841v1,1,,886,"Robust Reinforcement Learning with Distributional Risk-averse formulation
+
+Pierre Clavier 1 2 Stéphanie Allassonnière 2 Erwan Le Pennec 1
+
+Abstract
+
+Robust Reinforcement Learning tries to make predictions more robust to changes in the dynamics
+or rewards of the system. This problem is particularly important when the dynamics and rewards
+of the environment are estimated from the data. In
+this paper, we approximate the Robust Reinforcement Learning constrained with a Φ-divergence
+using an approximate Risk-Averse formulation.
+We show that the classical Reinforcement Learning formulation can be robustified using standard
+deviation penalization of the objective. Two algorithms based on Distributional Reinforcement
+Learning, one for discrete and one for continuous action spaces are proposed and tested in a
+classical Gym environment to demonstrate the
+robustness of the algorithms.",2,"tron abstract, ket thuc o cau hoan chinh"
+B,2303.13117v1,1,,331,"RLOR: A FLEXIBLE FRAMEWORK OF DEEP REINFORCEMENT LEARNING FOR OPERATION RESEARCH
+
+Ching Pui WAN
+Lenovo Machine Intelligence Center
+Hong Kong
+cpwandeep@gmail.com
+
+Tung LI
+Lenovo Machine Intelligence Center
+Hong Kong
+tonyli537@gmail.com
+
+Jason Min WANG
+Lenovo Machine Intelligence Center
+Hong Kong
+jasonwangm@connect.ust.hk
+
+ABSTRACT",1,"tieu de + tac gia + chu 'ABSTRACT', chua vao noi dung"
+B,2305.03360v1,1,,222,"arXiv:2305.03360v1 [cs.LG] 5 May 2023
+
+A Survey on Offline Model-Based Reinforcement
+
+Learning
+
+Haoyang He
+Electrical and Computer Engineering
+
+Carnegie Mellon University
+
+Pittsburgh, PA 15213
+hhe2@andrew.cmu.edu
+
+Abstract",1,"tieu de + tac gia + chu 'Abstract', chua vao noi dung"
+B,2308.02391v1,1,,911,"Learning Optimal Admission Control in Partially
+
+Observable Queueing Networks
+
+Jonatha Anselmi1†, Bruno Gaujal1†, Louis-Sébastien Rebuffi1*
+
+1*Univ. Grenoble Alpes, Inria, CNRS, Grenoble INP, LIG, Grenoble,
+38000, France.
+
+*Corresponding author(s). E-mail(s):
+louis-sebastien.rebuffi@univ-grenoble-alpes.fr;
+Contributing authors: jonatha.anselmi@inria.fr; bruno.gaujal@inria.fr;
+
+†These authors contributed equally to this work.
+
+Abstract
+
+We present an efficient reinforcement learning algorithm that learns the optimal admission control policy in a partially observable queueing network. Specifically, only
+the arrival and departure times from the network are observable, and optimality
+refers to the average holding/rejection cost in infinite horizon.
+While reinforcement learning in Partially Observable Markov Decision Processes
+(POMDP) is prohibitively expensive in general, we show that our algorithm has",1,cat giua cau o cuoi chunk ('we show that our algorithm has')
+B,2308.14897v1,1,,325,"Statistically Efficient Variance Reduction with Double
+
+Policy Estimation for Off-Policy Evaluation in
+
+Sequence-Modeled Reinforcement Learning
+
+Hanhan Zhou
+The George Washington University
+
+hanhan@gwu.edu
+
+Tian Lan
+The George Washington University
+
+tlan@gwu.edu
+
+Vaneet Aggarwal
+Purdue University
+vaneet@purdue.edu
+
+Abstract",1,"tieu de + tac gia + chu 'Abstract', chua vao noi dung"
+B,2404.02429v1,1,,1147,"AD4RL: Autonomous Driving Benchmarks for
+Offline Reinforcement Learning with Value-based Dataset
+
+Dongsu Lee†, Chanin Eom†, and Minhae Kwon†,∗
+
+Abstract— Offline reinforcement learning has emerged as a
+promising technology by enhancing its practicality through the
+use of pre-collected large datasets. Despite its practical benefits,
+most algorithm development research in offline reinforcement
+learning still relies on game tasks with synthetic datasets.
+To address such limitations, this paper provides autonomous
+driving datasets and benchmarks for offline reinforcement
+learning research. We provide 19 datasets, including realworld human driver’s datasets, and seven popular offline
+reinforcement learning algorithms in three realistic driving
+scenarios. We also provide a unified decision-making process
+model that can operate effectively across different scenarios,
+serving as a reference framework in algorithm design. Our
+research lays the groundwork for further collaborations in the
+community to explore practical aspects of existing reinforcement learning methods. Dataset and codes can be found in
+https://sites.google.com/view/ad4rl.",2,"tron abstract, ket thuc o URL du an"
+B,2410.14069v1,1,,986,"Rethinking Optimal Transport in
+
+Offline Reinforcement Learning
+
+Arip Asadulaev1,2 Rostislav Korst4 Alexander Korotin3,1
+
+Vage Egiazarian5,6 Andrey Filchenkov2 Evgeny Burnaev3,1
+
+1AIRI
+2ITMO
+3Skoltech
+4MIPT
+5Yandex
+6HSE University
+aripasadulaev@airi.net
+
+Abstract
+
+We propose a novel algorithm for offline reinforcement learning using optimal
+transport. Typically, in offline reinforcement learning, the data is provided by
+various experts and some of them can be sub-optimal. To extract an efficient policy,
+it is necessary to stitch the best behaviors from the dataset. To address this problem,
+we rethink offline reinforcement learning as an optimal transportation problem.
+And based on this, we present an algorithm that aims to find a policy that maps
+states to a partial distribution of the best expert actions for each given state. We
+evaluate the performance of our algorithm on continuous control problems from
+the D4RL suite and demonstrate improvements over existing methods.",2,"tron abstract, ket thuc o cau hoan chinh"
+B,2410.17904v1,1,,719,"Reinforcement Learning under Latent Dynamics:
+
+Toward Statistical and Algorithmic Modularity
+
+Philip Amortila
+philipa4@illinois.edu
+
+Dylan J. Foster
+dylanfoster@microsoft.com
+
+Nan Jiang
+nanjiang@illinois.edu
+
+Akshay Krishnamurthy
+
+akshaykr@microsoft.com
+
+Zakaria Mhammedi
+
+mhammedi@google.com
+
+Abstract
+
+Real-world applications of reinforcement learning often involve environments where agents operate on
+complex, high-dimensional observations, but the underlying (“latent”) dynamics are comparatively simple.
+However, outside of restrictive settings such as small latent spaces, the fundamental statistical requirements
+and algorithmic principles for reinforcement learning under latent dynamics are poorly understood.",2,ket thuc o cau hoan chinh ('poorly understood.')

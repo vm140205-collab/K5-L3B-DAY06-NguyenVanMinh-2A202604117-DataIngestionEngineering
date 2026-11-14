@@ -1,4 +1,7 @@
-# Core setup and PDF parsing. Choose and install an embedding SDK separately.
-psycopg[binary]==3.3.8
-pypdf>=5,<7
+# Pipeline dependencies for the Day 06 submission.
+# Embeddings run locally (ONNX), so no API key is required.
+pymupdf==1.27.2.2
+qdrant-client==1.20.0
+fastembed==0.9.1
 python-dotenv>=1,<2
+numpy>=2

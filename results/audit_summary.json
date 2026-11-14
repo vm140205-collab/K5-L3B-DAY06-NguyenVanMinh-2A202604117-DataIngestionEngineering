@@ -1,0 +1,66 @@
+{
+  "coherence": {
+    "A": {
+      "n": 10,
+      "mean": 1.0,
+      "distribution": {
+        "1": 10
+      }
+    },
+    "B": {
+      "n": 10,
+      "mean": 1.5,
+      "distribution": {
+        "1": 5,
+        "2": 5
+      }
+    }
+  },
+  "grounding": {
+    "A": {
+      "n": 5,
+      "mean": 1.8,
+      "distribution": {
+        "1": 1,
+        "2": 4
+      }
+    },
+    "B": {
+      "n": 5,
+      "mean": 1.8,
+      "distribution": {
+        "1": 1,
+        "2": 4
+      }
+    },
+    "C": {
+      "n": 5,
+      "mean": 1.8,
+      "distribution": {
+        "1": 1,
+        "2": 4
+      }
+    }
+  },
+  "metadata": {
+    "A": {
+      "records_checked": 15,
+      "records_correct": 15,
+      "filter_records": 3,
+      "filter_records_compliant": 3
+    },
+    "B": {
+      "records_checked": 15,
+      "records_correct": 15,
+      "filter_records": 3,
+      "filter_records_compliant": 3
+    },
+    "C": {
+      "records_checked": 15,
+      "records_correct": 15,
+      "filter_records": 3,
+      "filter_records_compliant": 3
+    }
+  },
+  "grader": "author (self-assessment); sample sizes 10 positions / 5 test questions"
+}

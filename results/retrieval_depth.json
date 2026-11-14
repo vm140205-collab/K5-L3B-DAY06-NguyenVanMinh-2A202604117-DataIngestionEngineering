@@ -1,0 +1,473 @@
+{
+  "depth": 20,
+  "summary": {
+    "A": {
+      "questions": 20,
+      "evidence_in_top1": 7,
+      "evidence_in_top3": 12,
+      "evidence_in_top10": 14,
+      "evidence_in_top20": 14,
+      "gold_page_in_top20": 17,
+      "evidence_never_found": [
+        "q01",
+        "q04",
+        "q07",
+        "q09",
+        "q10",
+        "q14"
+      ]
+    },
+    "B": {
+      "questions": 20,
+      "evidence_in_top1": 9,
+      "evidence_in_top3": 13,
+      "evidence_in_top10": 14,
+      "evidence_in_top20": 15,
+      "gold_page_in_top20": 17,
+      "evidence_never_found": [
+        "q01",
+        "q04",
+        "q06",
+        "q07",
+        "q09"
+      ]
+    },
+    "C": {
+      "questions": 20,
+      "evidence_in_top1": 10,
+      "evidence_in_top3": 13,
+      "evidence_in_top10": 14,
+      "evidence_in_top20": 15,
+      "gold_page_in_top20": 17,
+      "evidence_never_found": [
+        "q01",
+        "q04",
+        "q06",
+        "q07",
+        "q09"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "strategy": "A",
+      "question_id": "q01",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "A",
+      "question_id": "q02",
+      "split": "dev",
+      "evidence_rank_in_20": 2,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q03",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q04",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": 7
+    },
+    {
+      "strategy": "A",
+      "question_id": "q05",
+      "split": "dev",
+      "evidence_rank_in_20": 2,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q06",
+      "split": "dev",
+      "evidence_rank_in_20": 7,
+      "gold_page_rank_in_20": 7
+    },
+    {
+      "strategy": "A",
+      "question_id": "q07",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "A",
+      "question_id": "q08",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q09",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "A",
+      "question_id": "q10",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": 2
+    },
+    {
+      "strategy": "A",
+      "question_id": "q11",
+      "split": "dev",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "A",
+      "question_id": "q12",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q13",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q14",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": 2
+    },
+    {
+      "strategy": "A",
+      "question_id": "q15",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q16",
+      "split": "test",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q17",
+      "split": "test",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q18",
+      "split": "test",
+      "evidence_rank_in_20": 7,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "A",
+      "question_id": "q19",
+      "split": "test",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "A",
+      "question_id": "q20",
+      "split": "test",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q01",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "B",
+      "question_id": "q02",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q03",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q04",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": 5
+    },
+    {
+      "strategy": "B",
+      "question_id": "q05",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q06",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q07",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "B",
+      "question_id": "q08",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q09",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "B",
+      "question_id": "q10",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q11",
+      "split": "dev",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "B",
+      "question_id": "q12",
+      "split": "dev",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "B",
+      "question_id": "q13",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q14",
+      "split": "dev",
+      "evidence_rank_in_20": 2,
+      "gold_page_rank_in_20": 2
+    },
+    {
+      "strategy": "B",
+      "question_id": "q15",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q16",
+      "split": "test",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q17",
+      "split": "test",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "B",
+      "question_id": "q18",
+      "split": "test",
+      "evidence_rank_in_20": 15,
+      "gold_page_rank_in_20": 2
+    },
+    {
+      "strategy": "B",
+      "question_id": "q19",
+      "split": "test",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "B",
+      "question_id": "q20",
+      "split": "test",
+      "evidence_rank_in_20": 4,
+      "gold_page_rank_in_20": 4
+    },
+    {
+      "strategy": "C",
+      "question_id": "q01",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "C",
+      "question_id": "q02",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q03",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q04",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": 5
+    },
+    {
+      "strategy": "C",
+      "question_id": "q05",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q06",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q07",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "C",
+      "question_id": "q08",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q09",
+      "split": "dev",
+      "evidence_rank_in_20": null,
+      "gold_page_rank_in_20": null
+    },
+    {
+      "strategy": "C",
+      "question_id": "q10",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q11",
+      "split": "dev",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "C",
+      "question_id": "q12",
+      "split": "dev",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "C",
+      "question_id": "q13",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q14",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q15",
+      "split": "dev",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q16",
+      "split": "test",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q17",
+      "split": "test",
+      "evidence_rank_in_20": 1,
+      "gold_page_rank_in_20": 1
+    },
+    {
+      "strategy": "C",
+      "question_id": "q18",
+      "split": "test",
+      "evidence_rank_in_20": 15,
+      "gold_page_rank_in_20": 2
+    },
+    {
+      "strategy": "C",
+      "question_id": "q19",
+      "split": "test",
+      "evidence_rank_in_20": 3,
+      "gold_page_rank_in_20": 3
+    },
+    {
+      "strategy": "C",
+      "question_id": "q20",
+      "split": "test",
+      "evidence_rank_in_20": 4,
+      "gold_page_rank_in_20": 4
+    }
+  ]
+}

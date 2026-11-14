@@ -1,0 +1,268 @@
+strategy,question_id,question,expected_answer,evidence_quote,evidence_present_at_rank,top1,top1_excerpt,top2_excerpt,top3_excerpt,grounding_0_1_2,reason
+A,q16,Which two meta-algorithms are proposed to obtain zero-shot generalization in offline reinforcement learning?,Pessimistic empirical risk minimization (PERM) and pessimistic proximal policy optimization (PPPO).,"We propose pessimistic empirical risk minimization (PERM) and pessimistic proximal policy optimization (PPPO), which leverage pessimistic policy evaluation to guide policy learning and enhance generalization.",1,2503.07988v1 p1,"Provable Zero-Shot Generalization in Offline Reinforcement
+
+Learning
+
+Zhiyong Wang ∗Chen Yang † John C.S. Lui ‡ Dongruo Zhou §
+
+Abstract
+
+In this work, we study offline reinforcement learning (RL) with zero-shot generalization
+property (ZSG), where the agent has access to an offline dataset includin","w.p. at least 1 −δ, SubOpt(πPERM) ≤ε.
+(ii) If n ≥400H2 log(|A|)
+
+ε2
+and K ≥max{ 40d
+
+cmin log(16dnH), 32c′2d3H5 log(16dHnK)C∗2
+
+n
+ε2
+}, then w.p. at least
+2/3, SubOpt(πPPPO) ≤ε.
+
+Corollary 6.4 suggests that both of our proposed algorithms enjoy the O(n−1/2 + K−1/2 · C∗
+
+n)
+convergence rate to the op","The remaining parts are organized as follows. In Section 2, we discuss related works. In Section
+3, we introduce the setting of our work. In Section 4, we analyze when existing offline RL approaches
+[Jin et al., 2021] fail to generalize without further algorithm modifications. In Section 5, we intro",2,evidence o rank 1
+A,q17,What does the acronym UCRL-M expand to?,Upper Confidence Reinforcement Learning with several Modules.,Algorithm UCRL-M (Upper Confidence Reinforcement Learning with several Modules) is given in Algorithm 1.,1,2308.02391v1 p12,"4.3 UCRL-M: learning with τmix modules
+
+Algorithm UCRL-M (Upper Confidence Reinforcement Learning with several Modules)
+is given in Algorithm 1. First, the algorithm initializes the different modules. Here, for
+each episode k and module m, it computes the empirical estimates of the reward and
+probab","xample, the UCBVI algorithm [31] requires the knowledge of the
+diameter of the MDP being learned.
+
+Here, we can patch UCRL-M to make it oblivious to ρ by making sure that τmix ≥
+5 log T/ log ρ−1 for any large enough T. For example, one can chose τmix := log2(T),
+as it is asymptotically larger than t","4.5 Time complexity of UCRL-M
+
+Proposition 1. The time complexity of UCRL-M is O(KSτmix + Ktevi + T), where
+
+K is the number of episodes and tevi the time complexity of extended value iteration.
+Furthermore, E(K) = O(log T).
+
+Proof. The time complexity of lines 5 and 6 is O(KSτmix). The complexity o",2,evidence o rank 1
+A,q18,Why does SORL incorporate shortcut models into the training process?,To add self-consistency so the policy can generate high quality samples under any inference budget.,"Our key insight is to leverage shortcut models [Frans et al., 2024], a novel class of generative models, in order to incorporate self-consistency into the training process, thus allowing the policy to generate high quality samples under any inference budget.",none,2505.22866v1 p2,"SORL’s policy is still able to capture complex, multi-modal data distributions.
+
+2. Through a novel theoretical analysis of shortcut models, we prove that SORL’s training
+objective regularizes SORL’s policy to the behavior of the offline data.
+
+3. Empirically, SORL achieves the best performance agai","p. Theoretically, we prove that SORL regularizes to the behavior policy, using
+a novel analysis of shortcut models. Empirically, SORL demonstrates the best performance across a
+range of diverse tasks. Additionally, SORL can be scaled at test-time, empirically demonstrating how
+greater compute at inf","E.2
+SORL Implementation Details
+
+One of the strengths of SORL is its implementation simplicity. In order to implement SORL, we adapt
+Park et al. [2025]’s open-source implementations of various offline RL algorithms (FQL, IFQL, IQL,
+ReBRAC), which are adapted from Park et al. [2024a]’s open-source da",1,"top-3 cung tai lieu va lien quan (regularization, hieu qua) nhung thieu cau key insight ve self-consistency"
+A,q19,"Among the 2025 papers, what does Sparse-Reg regularize when learning from small datasets?","Model complexity, via sparse regularization.",We propose using sparse regularization to regularize model complexity when learning from small datasets.,3,2506.17155v2 p9,"9.54 ± 257.07
+181.22 ± 593.25
+−403.65 ± 66.39
+2454.94 ± 1002.59
+Hopper-Expert
+895.89 ± 131.78
+740.92 ± 285.88
+383.31 ± 74.44
+2075.3 ± 749.97
+
+Table 2: Performance comparison of Sparse-Reg with varying dense network size.
+
+Performance at Various Sparsity Levels for Different Dataset Sizes:
+We present","arXiv:2506.17155v2 [cs.LG] 26 Jun 2025
+
+Sparse-Reg: Improving Sample Complexity in Offline
+Reinforcement Learning using Sparsity
+
+Samin Yeasar Arnob1,2, Scott Fujimoto3, Doina Precup1,2
+
+samin.arnob@mail.mcgill.ca
+
+1Department of Computing Science, McGill University, Canada
+2Mila Quebec AI Institute","overhead. In contrast, this paper’s utilization of sparsity is
+centred on a distinct purpose: the regularization of neural networks to decrease model complexity,
+particularly when dealing with limited training data samples.
+
+4
+Sparse-Reg: Sparse Regularization for Offline RL
+
+We propose using sparse",2,evidence o rank 3
+A,q20,Which structural condition on the latent dynamics is identified as enabling sample efficiency?,Pushforward coverability.,"We complement these negative findings with a positive result, identifying pushforward coverability as a general structural condition on the latent dynamics that enables sample efficiency (Theorem 3.2).",3,2410.17904v1 p2,"h prior work addresses through strong structural
+assumptions on the base MDP [KAL16; DKJADL19; MHKL20; ZSUWAS22; MFR23; DR21; Mha+20;
+MLJL21]. For the general latent-dynamics setting we consider, it is unclear whether similar techniques can
+be applied, or whether the setting is even statistically tr","l structural condition on the latent dynamics that enables sample efficiency (Theorem 3.2).
+
+Contributions: Algorithmic modularity (Section 4).
+Beyond developing a modular understanding
+of the statistical landscape, we investigate modular algorithm design principles for RL under general latent
+dynam","and
+demands that the sample complexity of the latent-dynamics setting is controlled by a natural bound on the
+sample complexity of the base MDP class. We show, perhaps surprisingly, that most well-studied reinforcement
+learning settings involving function approximation [Li09; RVR13; JKALS17; SJKAL19",2,evidence o rank 3
+B,q16,Which two meta-algorithms are proposed to obtain zero-shot generalization in offline reinforcement learning?,Pessimistic empirical risk minimization (PERM) and pessimistic proximal policy optimization (PPPO).,"We propose pessimistic empirical risk minimization (PERM) and pessimistic proximal policy optimization (PPPO), which leverage pessimistic policy evaluation to guide policy learning and enhance generalization.",1,2503.07988v1 p1,"Provable Zero-Shot Generalization in Offline Reinforcement
+
+Learning
+
+Zhiyong Wang ∗Chen Yang † John C.S. Lui ‡ Dongruo Zhou §
+
+Abstract
+
+In this work, we study offline reinforcement learning (RL) with zero-shot generalization
+property (ZSG), where the agent has access to an offline dataset includin","7
+Conclusion and Future Work
+
+In this work, we study the zero-shot generalization (ZSG) performance of offline reinforcement
+learning (RL). We propose two offline RL frameworks, pessimistic empirical risk minimization and
+pessimistic proximal policy optimization, and show that both of them can find ","1
+Introduction
+
+Offline reinforcement learning (RL) has become increasingly significant in modern RL because
+it eliminates the need for direct interaction between the agent and the environment; instead, it
+relies solely on learning from an offline training dataset. However, in practical applications",2,evidence o rank 1
+B,q17,What does the acronym UCRL-M expand to?,Upper Confidence Reinforcement Learning with several Modules.,Algorithm UCRL-M (Upper Confidence Reinforcement Learning with several Modules) is given in Algorithm 1.,1,2308.02391v1 p12,"4.3 UCRL-M: learning with τmix modules
+
+Algorithm UCRL-M (Upper Confidence Reinforcement Learning with several Modules)
+is given in Algorithm 1. First, the algorithm initializes the different modules. Here, for
+each episode k and module m, it computes the empirical estimates of the reward and
+probab","4.5 Time complexity of UCRL-M
+
+Proposition 1. The time complexity of UCRL-M is O(KSτmix + Ktevi + T), where
+
+K is the number of episodes and tevi the time complexity of extended value iteration.
+Furthermore, E(K) = O(log T).
+
+Proof. The time complexity of lines 5 and 6 is O(KSτmix). The complexity o","7.2 Regret of UCRL-M on the multi-tier queueing network
+
+We provide the performance of UCRL-M over the queueing network described above
+when the number of queues per tier n and the total number of jobs S vary. In Figure 4,
+we display the average regret over 66 runs of the UCRL-M algorithm when n var",2,evidence o rank 1
+B,q18,Why does SORL incorporate shortcut models into the training process?,To add self-consistency so the policy can generate high quality samples under any inference budget.,"Our key insight is to leverage shortcut models [Frans et al., 2024], a novel class of generative models, in order to incorporate self-consistency into the training process, thus allowing the policy to generate high quality samples under any inference budget.",none,2505.22866v1 p26,"Figure 3 demonstrates SORL’s scalability during both training and inference. At training time, SORL’s
+training runtime can be shortened by decreasing the number of backpropagation steps through
+time. At inference time, SORL maintains similar inference times compared to FQL under varying
+inference-ti","1. We introduce SORL, an efficient, one-stage training procedure for expressive policies that
+can perform inference under any compute budget, including one-step inference. Despite
+its efficiency, SORL’s policy is still able to capture complex, multi-modal data distributions.
+
+2. Through a novel theo","E.2
+SORL Implementation Details
+
+One of the strengths of SORL is its implementation simplicity. In order to implement SORL, we adapt
+Park et al. [2025]’s open-source implementations of various offline RL algorithms (FQL, IFQL, IQL,
+ReBRAC), which are adapted from Park et al. [2024a]’s open-source da",1,"top-3 cung tai lieu, noi ve scaling/one-stage training nhung thieu cau key insight ve self-consistency"
+B,q19,"Among the 2025 papers, what does Sparse-Reg regularize when learning from small datasets?","Model complexity, via sparse regularization.",We propose using sparse regularization to regularize model complexity when learning from small datasets.,3,2506.17155v2 p1,"arXiv:2506.17155v2 [cs.LG] 26 Jun 2025
+
+Sparse-Reg: Improving Sample Complexity in Offline
+Reinforcement Learning using Sparsity
+
+Samin Yeasar Arnob1,2, Scott Fujimoto3, Doina Precup1,2
+
+samin.arnob@mail.mcgill.ca
+
+1Department of Computing Science, McGill University, Canada
+2Mila Quebec AI Institute","5.3
+Comparing Performance with Various Regularization Techniques
+
+We hypothesize that using sparse regularization enables a more controlled and targeted regularization
+of neural network parameters. We evaluate a range of alternate regularization techniques designed to
+address overfitting in neural n","4
+Sparse-Reg: Sparse Regularization for Offline RL
+
+We propose using sparse regularization to regularize model complexity when learning from small
+datasets. We use a gradient-based method proposed in Lee et al. (2018) that identifies important
+parameters by using a connection sensitivity measure S, ",2,evidence o rank 3
+B,q20,Which structural condition on the latent dynamics is identified as enabling sample efficiency?,Pushforward coverability.,"We complement these negative findings with a positive result, identifying pushforward coverability as a general structural condition on the latent dynamics that enables sample efficiency (Theorem 3.2).",none,2410.17904v1 p24,"For example, the crux of our sample complexity
+bounds under latent pushforward coverability in Section 3 (Theorem 3.2) is to prove a rather involved
+structural result which shows that Bellman completeness can indeed be satisfied under this assumption, but
+it is unclear whether these techniques can b","(Theorem 4.1). Our second considers stronger function approximation conditions that enable the estimation
+
+of self-predictive latent models [SAGHCB20] through representation learning (Theorem 4.2). Both results are
+fully modular: they transform any sample-efficient algorithm for the base MDP class i","low-rank MDPs [AKKS20]) are sometimes (but not always) tractable under latent dynamics.6
+
+We point to Appendix D.2 for background on all the settings in Figure 1 and proofs that they are (or are
+
+not) statistically modular. We remark that it is fairly straightforward to embed most of the MDP classes",2,evidence khong khop nguyen van nhung top-1 neu dung 'sample complexity bounds under latent pushforward coverability (Theorem 3.2)' -> du tra loi
+C,q16,Which two meta-algorithms are proposed to obtain zero-shot generalization in offline reinforcement learning?,Pessimistic empirical risk minimization (PERM) and pessimistic proximal policy optimization (PPPO).,"We propose pessimistic empirical risk minimization (PERM) and pessimistic proximal policy optimization (PPPO), which leverage pessimistic policy evaluation to guide policy learning and enhance generalization.",1,2503.07988v1 p1,"Provable Zero-Shot Generalization in Offline Reinforcement
+
+Learning
+
+Zhiyong Wang ∗Chen Yang † John C.S. Lui ‡ Dongruo Zhou §
+
+Abstract
+
+In this work, we study offline reinforcement learning (RL) with zero-shot generalization
+property (ZSG), where the agent has access to an offline dataset includin","7
+Conclusion and Future Work
+
+In this work, we study the zero-shot generalization (ZSG) performance of offline reinforcement
+learning (RL). We propose two offline RL frameworks, pessimistic empirical risk minimization and
+pessimistic proximal policy optimization, and show that both of them can find ","1
+Introduction
+
+Offline reinforcement learning (RL) has become increasingly significant in modern RL because
+it eliminates the need for direct interaction between the agent and the environment; instead, it
+relies solely on learning from an offline training dataset. However, in practical applications",2,evidence o rank 1
+C,q17,What does the acronym UCRL-M expand to?,Upper Confidence Reinforcement Learning with several Modules.,Algorithm UCRL-M (Upper Confidence Reinforcement Learning with several Modules) is given in Algorithm 1.,1,2308.02391v1 p12,"4.3 UCRL-M: learning with τmix modules
+
+Algorithm UCRL-M (Upper Confidence Reinforcement Learning with several Modules)
+is given in Algorithm 1. First, the algorithm initializes the different modules. Here, for
+each episode k and module m, it computes the empirical estimates of the reward and
+probab","4.5 Time complexity of UCRL-M
+
+Proposition 1. The time complexity of UCRL-M is O(KSτmix + Ktevi + T), where
+
+K is the number of episodes and tevi the time complexity of extended value iteration.
+Furthermore, E(K) = O(log T).
+
+Proof. The time complexity of lines 5 and 6 is O(KSτmix). The complexity o","7.2 Regret of UCRL-M on the multi-tier queueing network
+
+We provide the performance of UCRL-M over the queueing network described above
+when the number of queues per tier n and the total number of jobs S vary. In Figure 4,
+we display the average regret over 66 runs of the UCRL-M algorithm when n var",2,evidence o rank 1
+C,q18,Why does SORL incorporate shortcut models into the training process?,To add self-consistency so the policy can generate high quality samples under any inference budget.,"Our key insight is to leverage shortcut models [Frans et al., 2024], a novel class of generative models, in order to incorporate self-consistency into the training process, thus allowing the policy to generate high quality samples under any inference budget.",none,2505.22866v1 p26,"Figure 3 demonstrates SORL’s scalability during both training and inference. At training time, SORL’s
+training runtime can be shortened by decreasing the number of backpropagation steps through
+time. At inference time, SORL maintains similar inference times compared to FQL under varying
+inference-ti","1. We introduce SORL, an efficient, one-stage training procedure for expressive policies that
+can perform inference under any compute budget, including one-step inference. Despite
+its efficiency, SORL’s policy is still able to capture complex, multi-modal data distributions.
+
+2. Through a novel theo","E.2
+SORL Implementation Details
+
+One of the strengths of SORL is its implementation simplicity. In order to implement SORL, we adapt
+Park et al. [2025]’s open-source implementations of various offline RL algorithms (FQL, IFQL, IQL,
+ReBRAC), which are adapted from Park et al. [2024a]’s open-source da",1,"top-3 cung tai lieu, noi ve scaling/one-stage training nhung thieu cau key insight ve self-consistency"
+C,q19,"Among the 2025 papers, what does Sparse-Reg regularize when learning from small datasets?","Model complexity, via sparse regularization.",We propose using sparse regularization to regularize model complexity when learning from small datasets.,3,2506.17155v2 p1,"arXiv:2506.17155v2 [cs.LG] 26 Jun 2025
+
+Sparse-Reg: Improving Sample Complexity in Offline
+Reinforcement Learning using Sparsity
+
+Samin Yeasar Arnob1,2, Scott Fujimoto3, Doina Precup1,2
+
+samin.arnob@mail.mcgill.ca
+
+1Department of Computing Science, McGill University, Canada
+2Mila Quebec AI Institute","5.3
+Comparing Performance with Various Regularization Techniques
+
+We hypothesize that using sparse regularization enables a more controlled and targeted regularization
+of neural network parameters. We evaluate a range of alternate regularization techniques designed to
+address overfitting in neural n","4
+Sparse-Reg: Sparse Regularization for Offline RL
+
+We propose using sparse regularization to regularize model complexity when learning from small
+datasets. We use a gradient-based method proposed in Lee et al. (2018) that identifies important
+parameters by using a connection sensitivity measure S, ",2,evidence o rank 3
+C,q20,Which structural condition on the latent dynamics is identified as enabling sample efficiency?,Pushforward coverability.,"We complement these negative findings with a positive result, identifying pushforward coverability as a general structural condition on the latent dynamics that enables sample efficiency (Theorem 3.2).",none,2410.17904v1 p24,"For example, the crux of our sample complexity
+bounds under latent pushforward coverability in Section 3 (Theorem 3.2) is to prove a rather involved
+structural result which shows that Bellman completeness can indeed be satisfied under this assumption, but
+it is unclear whether these techniques can b","(Theorem 4.1). Our second considers stronger function approximation conditions that enable the estimation
+
+of self-predictive latent models [SAGHCB20] through representation learning (Theorem 4.2). Both results are
+fully modular: they transform any sample-efficient algorithm for the base MDP class i","low-rank MDPs [AKKS20]) are sometimes (but not always) tractable under latent dynamics.6
+
+We point to Appendix D.2 for background on all the settings in Figure 1 and proofs that they are (or are
+
+not) statistically modular. We remark that it is fairly straightforward to embed most of the MDP classes",2,evidence khong khop nguyen van nhung top-1 neu dung y (Theorem 3.2)

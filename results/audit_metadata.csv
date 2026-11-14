@@ -1,0 +1,46 @@
+strategy,question_id,rank,document_id,page,source_matches_manifest,year_matches_manifest,category_matches_manifest,text_found_on_claimed_page,section,filter_required,filter_satisfied
+A,q16,1,2503.07988v1,1,True,True,True,True,,False,
+A,q16,2,2503.07988v1,13,True,True,True,True,6 Provable generalization for offline linear MDPs,False,
+A,q16,3,2503.07988v1,3,True,True,True,True,1 Introduction,False,
+A,q17,1,2308.02391v1,12,True,True,True,True,4.1 High-level description of the proposed algorithm,False,
+A,q17,2,2308.02391v1,17,True,True,True,True,6.1.2 Hyperstable networks,False,
+A,q17,3,2308.02391v1,14,True,True,True,True,4.5 Time complexity of UCRL-M,False,
+A,q18,1,2505.22866v1,2,True,True,True,True,1 Introduction,False,
+A,q18,2,2505.22866v1,11,True,True,True,True,7 Discussion,False,
+A,q18,3,2505.22866v1,30,True,True,True,True,E.2 SORL Implementation Details,False,
+A,q19,1,2506.17155v2,9,True,True,True,True,6 Discussion,True,True
+A,q19,2,2506.17155v2,1,True,True,True,True,,True,True
+A,q19,3,2506.17155v2,3,True,True,True,True,3 Related Work,True,True
+A,q20,1,2410.17904v1,2,True,True,True,True,1.1 Contributions,False,
+A,q20,2,2410.17904v1,2,True,True,True,True,1.1 Contributions,False,
+A,q20,3,2410.17904v1,2,True,True,True,True,1.1 Contributions,False,
+B,q16,1,2503.07988v1,1,True,True,True,True,,False,
+B,q16,2,2503.07988v1,13,True,True,True,True,7 Conclusion and Future Work,False,
+B,q16,3,2503.07988v1,1,True,True,True,True,1 Introduction,False,
+B,q17,1,2308.02391v1,12,True,True,True,True,4.1 High-level description of the proposed algorithm,False,
+B,q17,2,2308.02391v1,14,True,True,True,True,4.5 Time complexity of UCRL-M,False,
+B,q17,3,2308.02391v1,18,True,True,True,True,7.2 Regret of UCRL-M on the multi-tier queueing network,False,
+B,q18,1,2505.22866v1,26,True,True,True,True,C.2 Runtime Comparison,False,
+B,q18,2,2505.22866v1,2,True,True,True,True,1 Introduction,False,
+B,q18,3,2505.22866v1,30,True,True,True,True,E.2 SORL Implementation Details,False,
+B,q19,1,2506.17155v2,1,True,True,True,True,,True,True
+B,q19,2,2506.17155v2,5,True,True,True,True,5.3 Comparing Performance with Various Regularization Techniques,True,True
+B,q19,3,2506.17155v2,3,True,True,True,True,4 Sparse-Reg: Sparse Regularization for Offline RL,True,True
+B,q20,1,2410.17904v1,24,True,True,True,True,A Additional Discussion of Related Work,False,
+B,q20,2,2410.17904v1,3,True,True,True,True,1.1 Contributions,False,
+B,q20,3,2410.17904v1,7,True,True,True,True,3.2 Lower bounds: Impossibility of statistical modularity,False,
+C,q16,1,2503.07988v1,1,True,True,True,True,,False,
+C,q16,2,2503.07988v1,13,True,True,True,True,7 Conclusion and Future Work,False,
+C,q16,3,2503.07988v1,1,True,True,True,True,1 Introduction,False,
+C,q17,1,2308.02391v1,12,True,True,True,True,4.1 High-level description of the proposed algorithm,False,
+C,q17,2,2308.02391v1,14,True,True,True,True,4.5 Time complexity of UCRL-M,False,
+C,q17,3,2308.02391v1,18,True,True,True,True,7.2 Regret of UCRL-M on the multi-tier queueing network,False,
+C,q18,1,2505.22866v1,26,True,True,True,True,C.2 Runtime Comparison,False,
+C,q18,2,2505.22866v1,2,True,True,True,True,1 Introduction,False,
+C,q18,3,2505.22866v1,30,True,True,True,True,E.2 SORL Implementation Details,False,
+C,q19,1,2506.17155v2,1,True,True,True,True,,True,True
+C,q19,2,2506.17155v2,5,True,True,True,True,5.3 Comparing Performance with Various Regularization Techniques,True,True
+C,q19,3,2506.17155v2,3,True,True,True,True,4 Sparse-Reg: Sparse Regularization for Offline RL,True,True
+C,q20,1,2410.17904v1,24,True,True,True,True,A Additional Discussion of Related Work,False,
+C,q20,2,2410.17904v1,3,True,True,True,True,1.1 Contributions,False,
+C,q20,3,2410.17904v1,7,True,True,True,True,3.2 Lower bounds: Impossibility of statistical modularity,False,

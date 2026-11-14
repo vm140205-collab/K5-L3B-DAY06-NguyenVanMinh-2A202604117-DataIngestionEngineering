@@ -4,6 +4,58 @@
 
 Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, rồi đo xem cách chuẩn bị dữ liệu nào hiệu quả nhất.
 
+---
+
+## Bài làm — Nguyễn Văn Minh · 2A202604117 · L3B
+
+**Báo cáo đầy đủ:** [report/individual/2A202604117_NguyenVanMinh.md](report/individual/2A202604117_NguyenVanMinh.md)
+
+Corpus: 14 preprint arXiv (RL + điều khiển tối ưu), CC BY 4.0, **264 trang nội dung**.
+Embedding: `BAAI/bge-small-en-v1.5` (384 chiều, local ONNX, 0 USD).
+Vector store: Qdrant embedded, cosine. Ba cấu hình A/B/C, 20 câu hỏi (15 dev / 5 test, 3 câu filter).
+
+| | Hit@1 (dev) | Hit@3 (dev) | Hit@1 (test) | Hit@3 (test) | Coherence /2 |
+|---|---|---|---|---|---|
+| A — fixed 800/150 | 5/15 | 8/15 | 2/5 | 4/5 | 1,0 |
+| B — paragraph 1200 | 7/15 | 10/15 | 2/5 | 3/5 | 1,5 |
+| C — B + metadata filter | 8/15 | 10/15 | 2/5 | 3/5 | 1,5 |
+
+### Chạy lại
+
+```bash
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r starter/requirements.txt   # hoặc .venv/bin/python
+
+# 1. Tải corpus, xác minh license CC BY 4.0, sinh manifest + text đã chuẩn hóa
+.venv/Scripts/python.exe starter/scripts/fetch_corpus.py
+
+# 2. Kiểm chứng bộ câu hỏi (evidence phải là substring thật trên trang gold)
+.venv/Scripts/python.exe starter/scripts/validate_benchmark.py
+
+# 3. Chạy pipeline: chunk -> embed -> Qdrant -> benchmark
+cd starter && ../.venv/Scripts/python.exe -m src.run --recreate && cd ..
+
+# 4. Chẩn đoán và audit thủ công
+.venv/Scripts/python.exe starter/scripts/retrieval_depth.py
+.venv/Scripts/python.exe starter/scripts/build_audit_samples.py
+.venv/Scripts/python.exe starter/scripts/apply_audit_labels.py
+```
+
+Không cần API key: embedding chạy local. PDF gốc không commit (tải lại bằng script 1);
+text đã chuẩn hóa nằm trong `data/pages.jsonl` để chấm lại evidence offline.
+
+| Đường dẫn | Nội dung |
+|---|---|
+| `data/manifest.json` | nguồn, license, `accessed_at`, sha256, danh sách trang nội dung, quy tắc tính trang |
+| `data/pages.jsonl` | text chuẩn hóa từng trang vật lý |
+| `benchmark/questions.jsonl` | 20 câu hỏi + gold page + evidence |
+| `starter/src/` | pipeline (ingestion, chunking, embeddings, store, benchmark, evaluation, run) |
+| `results/` | trace top-3, metrics, chẩn đoán độ sâu, nhãn audit |
+| `artifacts/experiment_log.csv` | giả thuyết và kết quả từng cấu hình |
+
+---
+
+
 | 📄 Dữ liệu | 🧩 Chiến lược | 🎯 Benchmark |
 |---|---|---|
 | Tối thiểu **30 trang nội dung** | Tối thiểu **3 cấu hình** | Tối thiểu **20 câu hỏi** |
