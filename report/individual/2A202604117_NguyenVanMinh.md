@@ -102,6 +102,17 @@ A và B chỉ khác cách chunk; B và C chỉ khác lọc. C dùng lại đúng
 Chunk không vượt ranh giới trang. Mục đích là giữ `page` trong metadata chính xác tuyệt đối khi
 chấm hit. Đánh đổi là câu vắt qua hai trang bị cắt; hệ quả định lượng ở mục 4.3.
 
+Phân bố độ dài chunk (`results/chunk_stats.json`):
+
+| Cấu hình | Số chunk | Tổng ký tự | Trung bình | p50 | p90 | Nhỏ nhất | Lớn nhất |
+|---|---|---|---|---|---|---|---|
+| A | 1.307 | 953.035 | 729,2 | 794 | 799 | 160 | 800 |
+| B | 949 | 795.478 | 838,2 | 923 | 1.187 | 121 | 1.317 |
+| C | 949 | 795.478 | 838,2 | 923 | 1.187 | 121 | 1.317 |
+
+A có overlap 150 ký tự nên vừa nhiều chunk hơn vừa nhiều ký tự hơn B. B có p90 là 1.187, sát ngưỡng
+1.200; mức lớn nhất 1.317 vượt ngưỡng vì bước gộp chunk quá ngắn cho phép vượt 25% giới hạn.
+
 ### 1.5 Lệnh chạy
 
 ```bash
@@ -262,6 +273,10 @@ Hit@3 so với B nhưng tăng độ đúng phạm vi, nên dùng C khi có filte
 
 - Cỡ mẫu nhỏ: 20 câu, 5 câu test. Ở test, chênh lệch một câu là 20%. Kết luận chỉ đúng cho corpus
   này.
+- Mẫu coherence chỉ lấy trang 1 của 10 tài liệu, nên toàn bộ mẫu nằm ở phần đầu tài liệu (tiêu đề,
+  abstract, mở bài). Đây đúng là chỗ cửa sổ cố định của A yếu nhất, nên điểm 1,0 của A có thể bị
+  đánh giá thấp hơn mức trung bình trên toàn bộ chunk. Cách chọn vị trí được cố định trước khi chấm
+  để tránh chọn mẫu có lợi, nhưng chưa đo được độ lệch này.
 - Tự chấm: nhãn coherence và grounding do tác giả gán, và tác giả đã biết kết quả tự động trước khi
   chấm, nên có rủi ro thiên lệch xác nhận. Cách giảm thiểu là cố định vị trí mẫu trước khi chấm và
   ghi lý do từng nhãn; cách này không loại bỏ được thiên lệch.
