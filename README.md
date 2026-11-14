@@ -6,7 +6,7 @@ Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, r�
 
 ---
 
-## Bài làm — Nguyễn Văn Minh · 2A202604117 · L3B
+## Bài làm: Nguyễn Văn Minh · 2A202604117 · L3B
 
 **Báo cáo đầy đủ:** [report/individual/2A202604117_NguyenVanMinh.md](report/individual/2A202604117_NguyenVanMinh.md)
 
@@ -16,9 +16,9 @@ Vector store: Qdrant embedded, cosine. Ba cấu hình A/B/C, 20 câu hỏi (15 d
 
 | | Hit@1 (dev) | Hit@3 (dev) | Hit@1 (test) | Hit@3 (test) | Coherence /2 |
 |---|---|---|---|---|---|
-| A — fixed 800/150 | 5/15 | 8/15 | 2/5 | 4/5 | 1,0 |
-| B — paragraph 1200 | 7/15 | 10/15 | 2/5 | 3/5 | 1,5 |
-| C — B + metadata filter | 8/15 | 10/15 | 2/5 | 3/5 | 1,5 |
+| A: fixed 800/150 | 5/15 | 8/15 | 2/5 | 4/5 | 1,0 |
+| B: paragraph 1200 | 7/15 | 10/15 | 2/5 | 3/5 | 1,5 |
+| C: B + metadata filter | 8/15 | 10/15 | 2/5 | 3/5 | 1,5 |
 
 ### Chạy lại
 

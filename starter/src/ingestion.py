@@ -135,7 +135,7 @@ def build_blocks(page: DocumentPage, carry_section: str = "") -> tuple[list[Bloc
     return blocks, section
 
 
-def section_at(blocks: list[Block], offset: int) -> str:  # noqa: D401
+def section_at(blocks: list[Block], offset: int) -> str:
     """Section label in force at a character offset inside the page."""
     current = blocks[0].section if blocks else ""
     for block in blocks:

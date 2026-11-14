@@ -57,7 +57,7 @@ def summarize(traces: list[dict[str, Any]]) -> dict[str, Any]:
             h1 = sum(1 for t in subset if t["hit_at_1"])
             h3 = sum(1 for t in subset if t["hit_at_3"])
             gp = sum(1 for t in subset if t["gold_page_in_top3"])
-            split_evidence = sum(1 for t in subset if t["evidence_split"])
+            split_misses = sum(1 for t in subset if t["evidence_split"])
             filtered = [t for t in subset if t["filter"]]
             compliant = 0
             for t in filtered:
@@ -70,7 +70,7 @@ def summarize(traces: list[dict[str, Any]]) -> dict[str, Any]:
                 "hit_at_3": f"{h3}/{n}",
                 "hit_at_3_rate": round(h3 / n, 4),
                 "gold_page_in_top3": f"{gp}/{n}",
-                "evidence_split_misses": split_evidence,
+                "evidence_split_misses": split_misses,
                 "filter_questions": len(filtered),
                 "filter_compliant": f"{compliant}/{len(filtered)}" if filtered else "n/a",
             }

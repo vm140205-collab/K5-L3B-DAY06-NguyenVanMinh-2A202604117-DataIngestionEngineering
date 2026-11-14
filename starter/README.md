@@ -1,6 +1,8 @@
 # Starter · PostgreSQL + pgvector
 
-Bộ khởi động **tùy chọn** cho lab cá nhân. Docker Compose tạo PostgreSQL + pgvector local; các file trong `src/` là **khung pseudocode có TODO**, chưa đọc tài liệu, tạo embedding, lưu vector hay chạy benchmark. Bạn cần tự hiện thực. Vẫn có thể chọn Qdrant, Chroma hoặc vector store tương đương theo [GUIDE.md](../GUIDE.md).
+Bộ khởi động **tùy chọn** cho lab cá nhân. Docker Compose tạo PostgreSQL + pgvector local; các file trong `src/` ban đầu là khung pseudocode có TODO.
+
+> **Trạng thái trong bài nộp này:** `src/` đã được hiện thực đầy đủ, nhưng **không dùng** nhánh PostgreSQL + pgvector. Máy làm bài không có Docker, nên vector store là **Qdrant embedded** (`qdrant-client`, lưu trên đĩa tại `qdrant_data/`), embedding là model local `BAAI/bge-small-en-v1.5` qua fastembed. Vì vậy `docker-compose.yml`, `init.sql`, `.env.example` và `scripts/check_setup.py` vẫn còn trong repo như tài liệu tham khảo của starter, không nằm trong đường chạy. Lý do đổi và cách chạy thật: [report/individual/2A202604117_NguyenVanMinh.md](../report/individual/2A202604117_NguyenVanMinh.md) mục 1.3.
 
 ## Cấu trúc
 
@@ -8,16 +10,19 @@ Bộ khởi động **tùy chọn** cho lab cá nhân. Docker Compose tạo Post
 starter/
 ├── docker-compose.yml     # PostgreSQL 16 + pgvector, chỉ mở cổng local
 ├── init.sql               # bật extension khi tạo database mới
-├── requirements.txt       # psycopg, pypdf và python-dotenv
-├── .env.example           # cấu hình mẫu; copy thành .env
-├── scripts/check_setup.py # kiểm tra kết nối và extension (đã chạy được)
+├── requirements.txt       # pymupdf, qdrant-client, fastembed, python-dotenv, numpy
+├── .env.example           # cấu hình mẫu của starter (không dùng trong bài này)
+├── scripts/check_setup.py # kiểm tra kết nối pgvector (không dùng trong bài này)
+├── scripts/               # fetch_corpus, validate_benchmark, audit, chẩn đoán
 ├── src/
-│   ├── models.py          # cấu trúc dữ liệu mẫu
-│   ├── ingestion.py       # TODO: đọc / chuẩn hóa tài liệu
-│   ├── chunking.py        # TODO: chia chunk
-│   ├── embeddings.py      # TODO: chọn model API hoặc local
-│   ├── store.py           # TODO: lưu vector, metadata và filter
-│   ├── evaluation.py      # TODO: chấm truy xuất, lưu trace
+│   ├── models.py          # DocumentPage, Chunk, Block
+│   ├── config.py          # đường dẫn, model, ba cấu hình A/B/C
+│   ├── ingestion.py       # đọc pages.jsonl, layout block, heading
+│   ├── chunking.py        # fixed window và paragraph/section packing
+│   ├── embeddings.py      # fastembed (local ONNX), không fallback mock
+│   ├── store.py           # Qdrant embedded: upsert idempotent, cosine + filter
+│   ├── benchmark.py       # nạp và kiểm chứng bộ câu hỏi
+│   ├── evaluation.py      # Hit@1 / Evidence Hit@3, trace từng câu
 │   └── run.py             # TODO: kết nối các bước thành pipeline
 ├── data/                  # bạn tự chuẩn bị corpus được phép sử dụng
 └── results/               # lưu kết quả của bạn
@@ -54,12 +59,16 @@ docker compose -p day6_student_starter stop
 
 Điền key tương ứng trong `.env` nếu dùng OpenRouter, OpenAI hoặc Gemini; **không commit `.env`**. Model local không cần API key. `requirements.txt` chỉ có dependencies cơ bản: tự cài SDK hoặc thư viện local phù hợp với model bạn chọn và ghi lại version/lệnh cài trong báo cáo. Ghi tên model và số chiều; dùng cùng model cho toàn bộ chiến lược và vector query tương thích vector document.
 
-## 3. Hoàn thiện pipeline
+## 3. Pipeline trong bài nộp
 
-1. Đặt corpus vào `data/` hoặc cung cấp manifest/hướng dẫn truy cập. Đọc [GUIDE.md](../GUIDE.md) về **30 trang nội dung**, quyền dữ liệu và metadata.
-2. Hoàn thiện từng hàm TODO trong `src/`. Lưu ID tài liệu, nguồn, trang/vị trí và ít nhất một trường filter có ích.
-3. Xây ít nhất ba cấu hình; ví dụ A fixed-size, B theo đoạn, C như B nhưng có filter. Cần cùng corpus, model và benchmark; nạp lại không nhân đôi và xử lý chunk cũ khi dữ liệu đổi.
-4. Tự viết ít nhất 20 câu hỏi kèm evidence, tách dev/test trước khi thử theo [BENCHMARK.md](../BENCHMARK.md). Lưu trace top-3 và báo cáo đủ năm tiêu chí.
-5. Sau khi hoàn thiện, chạy `python -m src.run` từ thư mục `starter/`. Trước khi làm TODO, lệnh này **chủ động báo `NotImplementedError`**.
+Corpus nằm ở `../data/` (manifest + text đã chuẩn hóa), không nằm trong `starter/data/`.
 
-Lưu code, cấu hình, kết quả và lệnh chạy để người chấm tái lập; không commit key, dữ liệu mật hoặc dữ liệu không có quyền chia sẻ.
+```bash
+# từ thư mục gốc repo
+python starter/scripts/fetch_corpus.py        # tải PDF, xác minh CC BY 4.0, sinh manifest + pages.jsonl
+python starter/scripts/validate_benchmark.py  # evidence phải là substring thật trên trang gold
+cd starter && python -m src.run --recreate    # chunk -> embed -> Qdrant -> benchmark
+```
+
+`python -m src.run --skip-ingest` chạy lại benchmark trên vector đã lưu. Không cần API key.
+Chi tiết tham số, kết quả và phần audit: xem báo cáo ở thư mục `report/individual/`.

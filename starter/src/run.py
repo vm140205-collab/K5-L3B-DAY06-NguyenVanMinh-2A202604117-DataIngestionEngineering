@@ -22,11 +22,6 @@ from .evaluation import evaluate_query, summarize
 from .ingestion import corpus_stats, load_corpus
 from .store import QdrantStore
 
-# Local embedding model: no metered cost. Kept as an explicit constant so the
-# report can state the cost line as a computed value rather than a guess.
-USD_PER_1M_TOKENS = 0.0
-
-
 def _write_json(path, payload) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
