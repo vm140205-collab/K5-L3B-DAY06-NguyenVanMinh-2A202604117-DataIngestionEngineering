@@ -1,0 +1,107 @@
+{
+  "A": {
+    "dev": {
+      "questions": 15,
+      "hit_at_1": "5/15",
+      "hit_at_1_rate": 0.3333,
+      "hit_at_3": "8/15",
+      "hit_at_3_rate": 0.5333,
+      "gold_page_in_top3": "10/15",
+      "evidence_split_misses": 2,
+      "filter_questions": 2,
+      "filter_compliant": "1/2"
+    },
+    "test": {
+      "questions": 5,
+      "hit_at_1": "2/5",
+      "hit_at_1_rate": 0.4,
+      "hit_at_3": "4/5",
+      "hit_at_3_rate": 0.8,
+      "gold_page_in_top3": "5/5",
+      "evidence_split_misses": 1,
+      "filter_questions": 1,
+      "filter_compliant": "1/1"
+    },
+    "all": {
+      "questions": 20,
+      "hit_at_1": "7/20",
+      "hit_at_1_rate": 0.35,
+      "hit_at_3": "12/20",
+      "hit_at_3_rate": 0.6,
+      "gold_page_in_top3": "15/20",
+      "evidence_split_misses": 3,
+      "filter_questions": 3,
+      "filter_compliant": "2/3"
+    }
+  },
+  "B": {
+    "dev": {
+      "questions": 15,
+      "hit_at_1": "7/15",
+      "hit_at_1_rate": 0.4667,
+      "hit_at_3": "10/15",
+      "hit_at_3_rate": 0.6667,
+      "gold_page_in_top3": "11/15",
+      "evidence_split_misses": 1,
+      "filter_questions": 2,
+      "filter_compliant": "1/2"
+    },
+    "test": {
+      "questions": 5,
+      "hit_at_1": "2/5",
+      "hit_at_1_rate": 0.4,
+      "hit_at_3": "3/5",
+      "hit_at_3_rate": 0.6,
+      "gold_page_in_top3": "4/5",
+      "evidence_split_misses": 1,
+      "filter_questions": 1,
+      "filter_compliant": "1/1"
+    },
+    "all": {
+      "questions": 20,
+      "hit_at_1": "9/20",
+      "hit_at_1_rate": 0.45,
+      "hit_at_3": "13/20",
+      "hit_at_3_rate": 0.65,
+      "gold_page_in_top3": "15/20",
+      "evidence_split_misses": 2,
+      "filter_questions": 3,
+      "filter_compliant": "2/3"
+    }
+  },
+  "C": {
+    "dev": {
+      "questions": 15,
+      "hit_at_1": "8/15",
+      "hit_at_1_rate": 0.5333,
+      "hit_at_3": "10/15",
+      "hit_at_3_rate": 0.6667,
+      "gold_page_in_top3": "11/15",
+      "evidence_split_misses": 1,
+      "filter_questions": 2,
+      "filter_compliant": "2/2"
+    },
+    "test": {
+      "questions": 5,
+      "hit_at_1": "2/5",
+      "hit_at_1_rate": 0.4,
+      "hit_at_3": "3/5",
+      "hit_at_3_rate": 0.6,
+      "gold_page_in_top3": "4/5",
+      "evidence_split_misses": 1,
+      "filter_questions": 1,
+      "filter_compliant": "1/1"
+    },
+    "all": {
+      "questions": 20,
+      "hit_at_1": "10/20",
+      "hit_at_1_rate": 0.5,
+      "hit_at_3": "13/20",
+      "hit_at_3_rate": 0.65,
+      "gold_page_in_top3": "15/20",
+      "evidence_split_misses": 2,
+      "filter_questions": 3,
+      "filter_compliant": "3/3"
+    }
+  }
+}

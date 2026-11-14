@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T02:37:03Z",
+  "generated_at": "2026-11-14T02:39:40Z",
   "corpus_topic": "reinforcement learning and optimal control (arXiv preprints)",
   "documents": [
     {
@@ -8,7 +8,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2004.01625v2",
       "pdf_url": "https://arxiv.org/pdf/2004.01625v2",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:03Z",
+      "accessed_at": "2026-11-14T02:39:41Z",
       "primary_category": "eess.SY",
       "year": 2020,
       "document_type": "preprint",
@@ -27,8 +27,8 @@
         10
       ],
       "content_page_count": 10,
-      "content_chars": 37549,
-      "total_chars": 46533,
+      "content_chars": 38049,
+      "total_chars": 47132,
       "dropped_running_headers": [
         "2",
         "X",
@@ -49,7 +49,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2104.10383v1",
       "pdf_url": "https://arxiv.org/pdf/2104.10383v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:04Z",
+      "accessed_at": "2026-11-14T02:39:41Z",
       "primary_category": "eess.SY",
       "year": 2021,
       "document_type": "preprint",
@@ -66,8 +66,8 @@
         8
       ],
       "content_page_count": 8,
-      "content_chars": 38162,
-      "total_chars": 49024,
+      "content_chars": 38608,
+      "total_chars": 49577,
       "dropped_running_headers": [
         "0",
         "1",
@@ -86,7 +86,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2404.02429v1",
       "pdf_url": "https://arxiv.org/pdf/2404.02429v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:04Z",
+      "accessed_at": "2026-11-14T02:39:41Z",
       "primary_category": "cs.LG",
       "year": 2024,
       "document_type": "preprint",
@@ -101,8 +101,8 @@
         6
       ],
       "content_page_count": 6,
-      "content_chars": 32343,
-      "total_chars": 40140,
+      "content_chars": 32517,
+      "total_chars": 40367,
       "dropped_running_headers": [],
       "sha256_pdf": "5d5366c79682ccdd26d453ca08f70549310c715acc2596e8d7196c956a724d40",
       "bibliography_pages": [
@@ -116,7 +116,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2410.14069v1",
       "pdf_url": "https://arxiv.org/pdf/2410.14069v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:04Z",
+      "accessed_at": "2026-11-14T02:39:41Z",
       "primary_category": "cs.LG",
       "year": 2024,
       "document_type": "preprint",
@@ -134,8 +134,8 @@
         9
       ],
       "content_page_count": 9,
-      "content_chars": 32795,
-      "total_chars": 50787,
+      "content_chars": 33029,
+      "total_chars": 51216,
       "dropped_running_headers": [],
       "sha256_pdf": "a9d9a32ba5f1693c4b3f13dbdcf4e7ade072784dcfad91d08bae46872b971de7",
       "bibliography_pages": [
@@ -155,7 +155,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2305.03360v1",
       "pdf_url": "https://arxiv.org/pdf/2305.03360v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:42Z",
+      "accessed_at": "2026-11-14T02:39:41Z",
       "primary_category": "cs.LG",
       "year": 2023,
       "document_type": "preprint",
@@ -169,8 +169,8 @@
         5
       ],
       "content_page_count": 5,
-      "content_chars": 17483,
-      "total_chars": 21757,
+      "content_chars": 17684,
+      "total_chars": 21999,
       "dropped_running_headers": [],
       "sha256_pdf": "11b89d6bbe14307a2ed130093d689928d613df3491f917d770d71d3e71dc5688",
       "bibliography_pages": [
@@ -185,7 +185,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2506.17155v2",
       "pdf_url": "https://arxiv.org/pdf/2506.17155v2",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:42Z",
+      "accessed_at": "2026-11-14T02:39:42Z",
       "primary_category": "cs.LG",
       "year": 2025,
       "document_type": "preprint",
@@ -206,8 +206,8 @@
         17
       ],
       "content_page_count": 12,
-      "content_chars": 34553,
-      "total_chars": 45461,
+      "content_chars": 34716,
+      "total_chars": 45738,
       "dropped_running_headers": [],
       "sha256_pdf": "72c02bb7c983ddeda3d5b49c91b85401ae9be4e405e55dd7b5694a4df8cbd8bf",
       "bibliography_pages": [
@@ -225,7 +225,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2308.14897v1",
       "pdf_url": "https://arxiv.org/pdf/2308.14897v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:42Z",
+      "accessed_at": "2026-11-14T02:39:42Z",
       "primary_category": "cs.LG",
       "year": 2023,
       "document_type": "preprint",
@@ -247,8 +247,8 @@
         17
       ],
       "content_page_count": 13,
-      "content_chars": 41415,
-      "total_chars": 55299,
+      "content_chars": 42062,
+      "total_chars": 56083,
       "dropped_running_headers": [
         "1"
       ],
@@ -267,7 +267,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2503.07988v1",
       "pdf_url": "https://arxiv.org/pdf/2503.07988v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:42Z",
+      "accessed_at": "2026-11-14T02:39:42Z",
       "primary_category": "cs.LG",
       "year": 2025,
       "document_type": "preprint",
@@ -300,8 +300,8 @@
         24
       ],
       "content_page_count": 24,
-      "content_chars": 58110,
-      "total_chars": 73041,
+      "content_chars": 59685,
+      "total_chars": 74771,
       "dropped_running_headers": [],
       "sha256_pdf": "b2591de131c81b305e00c619fd102f84e14c893a91796574805854ee3b4818b9",
       "bibliography_pages": [
@@ -320,7 +320,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2505.22866v1",
       "pdf_url": "https://arxiv.org/pdf/2505.22866v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:43Z",
+      "accessed_at": "2026-11-14T02:39:47Z",
       "primary_category": "cs.LG",
       "year": 2025,
       "document_type": "preprint",
@@ -355,8 +355,8 @@
         32
       ],
       "content_page_count": 26,
-      "content_chars": 73027,
-      "total_chars": 89639,
+      "content_chars": 73928,
+      "total_chars": 90721,
       "dropped_running_headers": [],
       "sha256_pdf": "587a1f4bffc7b908a6a10748843500819e8a5e126bb67abef383c42090f573b0",
       "bibliography_pages": [
@@ -374,7 +374,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2511.10383v2",
       "pdf_url": "https://arxiv.org/pdf/2511.10383v2",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:44Z",
+      "accessed_at": "2026-11-14T02:39:48Z",
       "primary_category": "stat.ML",
       "year": 2025,
       "document_type": "preprint",
@@ -399,9 +399,10 @@
         16
       ],
       "content_page_count": 16,
-      "content_chars": 79812,
-      "total_chars": 95807,
+      "content_chars": 80681,
+      "total_chars": 96788,
       "dropped_running_headers": [
+        "\u0000",
         "\u0001",
         ".",
         "VOLUME XX 2026"
@@ -419,7 +420,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2206.06841v1",
       "pdf_url": "https://arxiv.org/pdf/2206.06841v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:44Z",
+      "accessed_at": "2026-11-14T02:39:48Z",
       "primary_category": "cs.LG",
       "year": 2022,
       "document_type": "preprint",
@@ -437,8 +438,8 @@
         11
       ],
       "content_page_count": 9,
-      "content_chars": 30133,
-      "total_chars": 38044,
+      "content_chars": 30608,
+      "total_chars": 38632,
       "dropped_running_headers": [
         "1",
         "Submission and Formatting Instructions for ICML 2022"
@@ -456,7 +457,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2303.13117v1",
       "pdf_url": "https://arxiv.org/pdf/2303.13117v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:44Z",
+      "accessed_at": "2026-11-14T02:39:49Z",
       "primary_category": "math.OC",
       "year": 2023,
       "document_type": "preprint",
@@ -480,8 +481,8 @@
         21
       ],
       "content_page_count": 15,
-      "content_chars": 45585,
-      "total_chars": 55665,
+      "content_chars": 45897,
+      "total_chars": 56054,
       "dropped_running_headers": [],
       "sha256_pdf": "6f6e22344280bf0f74c9357b6b57481fda342583a12cf033f46dfa09605e8350",
       "bibliography_pages": [
@@ -497,7 +498,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2410.17904v1",
       "pdf_url": "https://arxiv.org/pdf/2410.17904v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:45Z",
+      "accessed_at": "2026-11-14T02:39:49Z",
       "primary_category": "cs.LG",
       "year": 2024,
       "document_type": "preprint",
@@ -575,9 +576,10 @@
         79
       ],
       "content_page_count": 69,
-      "content_chars": 188026,
-      "total_chars": 208281,
+      "content_chars": 193967,
+      "total_chars": 214322,
       "dropped_running_headers": [
+        "\u0000",
         ".",
         "X",
         "h"
@@ -600,7 +602,7 @@
       "source_path_or_url": "https://arxiv.org/abs/2308.02391v1",
       "pdf_url": "https://arxiv.org/pdf/2308.02391v1",
       "license_or_permission": "CC BY 4.0",
-      "accessed_at": "2026-11-14T02:37:45Z",
+      "accessed_at": "2026-11-14T02:39:49Z",
       "primary_category": "cs.LG",
       "year": 2023,
       "document_type": "preprint",
@@ -651,8 +653,8 @@
         45
       ],
       "content_page_count": 42,
-      "content_chars": 80823,
-      "total_chars": 87885,
+      "content_chars": 82546,
+      "total_chars": 89691,
       "dropped_running_headers": [
         "X"
       ],
@@ -669,6 +671,6 @@
     "documents": 14,
     "physical_pages": 328,
     "content_pages": 264,
-    "content_chars": 789816
+    "content_chars": 803977
   }
 }

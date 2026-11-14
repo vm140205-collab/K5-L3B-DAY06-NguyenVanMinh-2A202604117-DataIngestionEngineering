@@ -1,0 +1,44 @@
+[
+  {
+    "strategy": "A",
+    "chunks": 1307,
+    "total_chars": 953035,
+    "mean_chars": 729.2,
+    "min_chars": 160,
+    "p50_chars": 794,
+    "p90_chars": 799,
+    "max_chars": 800,
+    "documents": 14,
+    "sections": 229,
+    "ingest_seconds": 228.7,
+    "deleted_stale": 0
+  },
+  {
+    "strategy": "B",
+    "chunks": 949,
+    "total_chars": 795478,
+    "mean_chars": 838.2,
+    "min_chars": 121,
+    "p50_chars": 923,
+    "p90_chars": 1187,
+    "max_chars": 1317,
+    "documents": 14,
+    "sections": 255,
+    "ingest_seconds": 209.9,
+    "deleted_stale": 0
+  },
+  {
+    "strategy": "C",
+    "chunks": 949,
+    "total_chars": 795478,
+    "mean_chars": 838.2,
+    "min_chars": 121,
+    "p50_chars": 923,
+    "p90_chars": 1187,
+    "max_chars": 1317,
+    "documents": 14,
+    "sections": 255,
+    "ingest_seconds": 212.7,
+    "deleted_stale": 0
+  }
+]

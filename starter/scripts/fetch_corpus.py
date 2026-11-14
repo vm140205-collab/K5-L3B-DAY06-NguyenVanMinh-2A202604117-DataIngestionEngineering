@@ -99,20 +99,28 @@ def normalize_text(text: str) -> str:
     return "\n".join(out).strip()
 
 
-def strip_running_headers(pages: list[str]) -> tuple[list[str], list[str]]:
-    """Drop lines repeated on >=50% of pages (running headers, footers, page numbers)."""
+def strip_running_headers(pages: list[list[str]]) -> tuple[list[list[str]], list[str]]:
+    """Drop blocks/lines repeated on >=50% of pages (running headers, footers, page numbers)."""
     if len(pages) < 4:
         return pages, []
     counts: Counter[str] = Counter()
-    for page in pages:
-        for line in {ln for ln in page.splitlines() if ln}:
-            counts[line] += 1
+    for blocks in pages:
+        seen = set()
+        for block in blocks:
+            for line in block.splitlines():
+                if line and line not in seen:
+                    seen.add(line)
+                    counts[line] += 1
     threshold = max(4, int(0.5 * len(pages)))
     repeated = {ln for ln, n in counts.items() if n >= threshold and len(ln) <= 120}
-    cleaned = []
-    for page in pages:
-        kept = [ln for ln in page.splitlines() if ln not in repeated]
-        cleaned.append(re.sub(r"\n{3,}", "\n\n", "\n".join(kept)).strip())
+    cleaned: list[list[str]] = []
+    for blocks in pages:
+        page_blocks = []
+        for block in blocks:
+            kept = "\n".join(ln for ln in block.splitlines() if ln not in repeated).strip()
+            if kept:
+                page_blocks.append(kept)
+        cleaned.append(page_blocks)
     return cleaned, sorted(repeated)
 
 
@@ -149,10 +157,25 @@ def classify_pages(pages: list[str]) -> list[tuple[str, int]]:
     return out
 
 
-def extract_pages(pdf_path: Path) -> list[str]:
+def extract_pages(pdf_path: Path) -> list[list[str]]:
+    """Extract layout blocks per page.
+
+    Two-column papers have no blank lines in the flat text, so paragraph structure
+    only survives through layout blocks; chunking strategy B depends on this.
+    """
     doc = pymupdf.open(pdf_path)
     try:
-        return [normalize_text(page.get_text("text")) for page in doc]
+        pages: list[list[str]] = []
+        for page in doc:
+            blocks = []
+            for block in page.get_text("blocks"):
+                if block[6] != 0:  # skip image blocks
+                    continue
+                text = normalize_text(block[4])
+                if text:
+                    blocks.append(text)
+            pages.append(blocks)
+        return pages
     finally:
         doc.close()
 
@@ -164,7 +187,8 @@ def build_document(arxiv_id: str, category: str, note: str) -> tuple[dict, list[
         time.sleep(1.0)  # be polite to arXiv
 
     raw_pages = extract_pages(pdf_path)
-    pages, dropped_headers = strip_running_headers(raw_pages)
+    block_pages, dropped_headers = strip_running_headers(raw_pages)
+    pages = ["\n\n".join(blocks) for blocks in block_pages]
 
     page_rows = []
     content_pages = []
@@ -175,6 +199,7 @@ def build_document(arxiv_id: str, category: str, note: str) -> tuple[dict, list[
             "document_id": arxiv_id,
             "page": i + 1,
             "text": text,
+            "blocks": block_pages[i],
             "body_chars": chars,
             "page_kind": kind,
             "is_content_page": kind == "content",

@@ -1,0 +1,15 @@
+{
+  "questions": 20,
+  "dev": 15,
+  "test": 5,
+  "filter_questions": 3,
+  "test_filter_questions": 1,
+  "types": {
+    "conditional": 2,
+    "direct": 11,
+    "filter": 3,
+    "paraphrase": 4
+  },
+  "errors": [],
+  "ok": true
+}

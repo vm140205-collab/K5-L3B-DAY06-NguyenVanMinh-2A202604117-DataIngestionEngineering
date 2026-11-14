@@ -1,0 +1,65 @@
+{
+  "run_at": "2026-11-14T02:44:53Z",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_dim": 384,
+  "vector_store": "qdrant-client embedded (local persistent)",
+  "collection": "day6_chunks",
+  "top_k": 3,
+  "strategies": {
+    "A": {
+      "name": "A",
+      "chunker": "fixed",
+      "size": 800,
+      "overlap": 150,
+      "use_metadata_filter": false,
+      "description": "fixed 800-char window, 150-char overlap, page-scoped, no filter"
+    },
+    "B": {
+      "name": "B",
+      "chunker": "paragraph",
+      "size": 1200,
+      "overlap": 0,
+      "use_metadata_filter": false,
+      "description": "paragraph/section-aware packing up to 1200 chars, page-scoped, no filter"
+    },
+    "C": {
+      "name": "C",
+      "chunker": "paragraph",
+      "size": 1200,
+      "overlap": 0,
+      "use_metadata_filter": true,
+      "description": "same chunks as B, metadata filter applied when the question supplies one"
+    }
+  },
+  "idempotency": {
+    "points_before_reingest": 3205,
+    "points_after_reingest": 3205,
+    "stable": true
+  },
+  "embedding_usage": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "dimensions": 384,
+    "provider": "fastembed 0.9.1 (local ONNX runtime)",
+    "documents_embedded": 6410,
+    "queries_embedded": 0,
+    "model_load_seconds": 0.3,
+    "embed_seconds": 1278.1,
+    "cost_usd": 0.0
+  },
+  "stored_points": {
+    "A": 1307,
+    "B": 949,
+    "C": 949
+  },
+  "query_usage": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "dimensions": 384,
+    "provider": "fastembed 0.9.1 (local ONNX runtime)",
+    "documents_embedded": 0,
+    "queries_embedded": 60,
+    "model_load_seconds": 0.3,
+    "embed_seconds": 0.7,
+    "cost_usd": 0.0
+  },
+  "total_seconds": 1325.7
+}
