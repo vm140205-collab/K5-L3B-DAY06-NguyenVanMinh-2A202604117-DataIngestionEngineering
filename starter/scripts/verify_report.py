@@ -182,30 +182,42 @@ check("title-only page-1 chunks",
 questions = {q["id"]: q for q in load_questions()}
 embedder = FastEmbedEmbedder()
 store = QdrantStore(QDRANT_PATH, COLLECTION, EMBEDDING_DIM)
+# A fresh clone has no vector store; the four checks below need it. Everything
+# else is verified from committed JSON/CSV, so this degrades instead of failing.
+try:
+    has_store = store.client.collection_exists(COLLECTION) and store.count("A") > 0
+except Exception:  # noqa: BLE001 - a fresh clone has no collection at all
+    has_store = False
+if not has_store:
+    print("NOTE: no vector store found; skipping the 4 checks that re-run a search."
+          " Run `cd starter && python -m src.run` first to enable them.")
 
-a_chunks = []
-for doc_id in sorted(by_doc):
-    a_chunks.extend(chunk_document(by_doc[doc_id], STRATEGIES["A"]))
-q01 = questions["q01"]
-quote = squash(q01["evidence_quote"])
-holder = [c for c in a_chunks if c.document_id == q01["gold_source_id"]
-          and c.page in q01["gold_pages"] and quote in squash(c.text)]
-check("q01 evidence intact in one A chunk", len(holder), 1)
-if holder:
-    import numpy as np
-    vec = np.array(embedder.embed_documents([holder[0].text])[0])
-    qv = np.array(embedder.embed_query(q01["question"]))
-    cos = float(vec @ qv / (np.linalg.norm(vec) * np.linalg.norm(qv)))
-    check("q01 evidence cosine (3dp)", round(cos, 3), 0.687)
-top1 = store.search("A", embedder.embed_query(q01["question"]), 1)[0]
-check("q01 top1 score (3dp)", round(top1["score"], 3), 0.791)
-check("q01 top1 document", top1["document_id"], "2506.17155v2")
+if has_store:
+    a_chunks = []
+    for doc_id in sorted(by_doc):
+        a_chunks.extend(chunk_document(by_doc[doc_id], STRATEGIES["A"]))
+    q01 = questions["q01"]
+    quote = squash(q01["evidence_quote"])
+    holder = [c for c in a_chunks if c.document_id == q01["gold_source_id"]
+              and c.page in q01["gold_pages"] and quote in squash(c.text)]
+    check("q01 evidence intact in one A chunk", len(holder), 1)
+    if holder:
+        import numpy as np
+        vec = np.array(embedder.embed_documents([holder[0].text])[0])
+        qv = np.array(embedder.embed_query(q01["question"]))
+        cos = float(vec @ qv / (np.linalg.norm(vec) * np.linalg.norm(qv)))
+        check("q01 evidence cosine (3dp)", round(cos, 3), 0.687)
+    top1 = store.search("A", embedder.embed_query(q01["question"]), 1)[0]
+    check("q01 top1 score (3dp)", round(top1["score"], 3), 0.791)
+    check("q01 top1 document", top1["document_id"], "2506.17155v2")
 
-# Strategy B applies no filter, so this must be an unfiltered search.
-b_q14 = store.search("B", embedder.embed_query(questions["q14"]["question"]), 3)
-check("q14 B rank1 year", b_q14[0]["year"], 2025)
-check("q14 B rank1 doc/page", (b_q14[0]["document_id"], b_q14[0]["page"]), ("2505.22866v1", 32))
-check("q14 B rank2 is gold", (b_q14[1]["document_id"], b_q14[1]["page"]), ("2410.14069v1", 1))
+    # Strategy B applies no filter, so this must be an unfiltered search.
+    b_q14 = store.search("B", embedder.embed_query(questions["q14"]["question"]), 3)
+    check("q14 B rank1 year", b_q14[0]["year"], 2025)
+    check("q14 B rank1 doc/page", (b_q14[0]["document_id"], b_q14[0]["page"]),
+          ("2505.22866v1", 32))
+    check("q14 B rank2 is gold", (b_q14[1]["document_id"], b_q14[1]["page"]),
+          ("2410.14069v1", 1))
 store.close()
 
 # --- report file itself: style and required sections

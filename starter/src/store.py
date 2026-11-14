@@ -145,4 +145,11 @@ class QdrantStore:
                                  exact=True).count
 
     def close(self) -> None:
-        self.client.close()
+        """Close once; safe to call again from __del__ during interpreter shutdown."""
+        if getattr(self, "_closed", False):
+            return
+        self._closed = True
+        try:
+            self.client.close()
+        except Exception:  # noqa: BLE001 - shutdown teardown must not raise
+            pass
