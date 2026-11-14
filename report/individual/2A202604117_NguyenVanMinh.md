@@ -114,7 +114,7 @@ cd starter && ../.venv/Scripts/python.exe -m src.run --recreate
 ```
 
 `data/corpus/*.pdf` không commit (20 MB, tải lại được); `data/pages.jsonl` (text đã chuẩn hóa,
-1,1 MB) được commit để người chấm chấm lại evidence mà không cần tải PDF.
+2,1 MB) được commit để người chấm chấm lại evidence mà không cần tải PDF.
 
 ## 2. Cấu hình và benchmark
 
@@ -163,9 +163,9 @@ Nguồn: `results/metrics.json`, trace đầy đủ trong `results/traces_{A,B,C
 
 | Strategy | Coherence trung bình /2 (n=10) | Metadata đủ và đúng (n/N) | Filter tuân thủ | Grounding 0/1/2 (n=5) và trung bình |
 |---|---|---|---|---|
-| A | **1,0** (10×1) | 15/15 | 2/3 (dev 1/2, test 1/1) | 0/1/4 → **1,8** |
-| B | **1,5** (5×2, 5×1) | 15/15 | 2/3 (dev 1/2, test 1/1) | 0/1/4 → **1,8** |
-| C | 1,5 (giống B) | 15/15 | **3/3** (dev 2/2, test 1/1) | 0/1/4 → **1,8** |
+| A | **1,0** (10×1) | 15/15 | 2/3 (dev 1/2, test 1/1) | 0×0, 1×1, 2×4 → **1,8** |
+| B | **1,5** (5×2, 5×1) | 15/15 | 2/3 (dev 1/2, test 1/1) | 0×0, 1×1, 2×4 → **1,8** |
+| C | 1,5 (giống B) | 15/15 | **3/3** (dev 2/2, test 1/1) | 0×0, 1×1, 2×4 → **1,8** |
 
 - **Coherence:** 10 vị trí cố định trước khi chấm = trang 1 của 10 tài liệu đầu theo `source_id`;
   mỗi vị trí chấm chunk chứa đầu trang đó. Nhãn + lý do: `results/audit_coherence.csv`.
@@ -198,7 +198,7 @@ nói về offline RL).
 | Câu | Kết luận |
 |---|---|
 | q01, q04, q07, q09, q10 | evidence **nằm nguyên trong một chunk** nhưng bị xếp dưới (ví dụ q01: cosine 0,687 so với top-1 0,791) |
-| q06 (cấu hình B) | evidence **bị tách qua 2 chunk** — lỗi chunking thật |
+| q06 (cấu hình B) | trang gold có 3 chunk nhưng **không chunk nào chứa trọn câu evidence** — lỗi chunking thật |
 
 ## 4. Phân tích và kết luận
 
@@ -210,27 +210,33 @@ từ dữ liệu: cửa sổ 800 ký tự của A bắt đầu ngay ở tiêu đ
 vector. B gom nguyên abstract nên 5/10 vị trí đạt 2 điểm.
 
 Nhưng B **không** thắng ở mọi mặt:
-- **Test Hit@3 lại thấp hơn A** (3/5 so với 4/5). Chênh lệch đúng 1 câu: q20. Ở B, câu evidence
-  của q20 không vào top-3; ở A thì vào (rank 3). Với n=5, đây là khác biệt 1 câu — **không đủ để
-  kết luận A tốt hơn B**, và tôi không dùng nó để đổi lựa chọn.
-- B sinh ra **5 chunk chỉ gồm tiêu đề + tác giả** (ví dụ `2104.10383v1` p1 dài 154 ký tự) vì
-  abstract dài hơn 1.200 ký tự nên không gộp được. Đây là lỗi thiết kế của B, có cách sửa rõ ràng
-  (mục 4.4).
+- **Test Hit@3 lại thấp hơn A** (3/5 so với 4/5). Chênh lệch đúng 1 câu: q20. Ở A, evidence của
+  q20 ở rank 3; ở B/C tụt xuống rank 4. Với n=5, đây là khác biệt 1 câu — **không đủ để kết luận
+  A tốt hơn B**, và tôi không dùng nó để đổi lựa chọn.
+- B sinh ra **5 chunk không chứa câu nào** (chỉ tiêu đề + tác giả + địa chỉ + chữ "Abstract") trên
+  14 tài liệu — `2104.10383v1` (154 ký tự), `2303.13117v1`, `2305.03360v1`, `2308.14897v1`,
+  `2505.22866v1` — vì abstract dài hơn 1.200 ký tự nên không gộp được vào block tiêu đề
+  (`starter/scripts/count_title_only.py`). Đây là lỗi thiết kế của B, có cách sửa rõ ràng (mục 4.6).
+
+Đọc theo độ sâu (`results/retrieval_depth.json`) thì A→B đổi chỗ đúng ba câu: **q10** từ "không có
+trong top-20" lên rank 1, **q14** từ "không có trong top-20" lên rank 2, và **q20** tụt từ 3 xuống 4.
+B thắng hai câu, thua một câu — không phải thắng đều.
 
 ### 4.2 B–C: đổi lọc metadata
 
 B–C dùng **cùng chunk**, nên mọi khác biệt đến từ filter. Kết quả: Hit@3 không đổi (10/15 dev),
 Hit@1 dev 7→8, và độ tuân thủ filter 2/3→3/3. Tác động nhỏ vì chỉ 3/20 câu có filter — đúng như
 dự đoán, nhưng đủ để thấy filter **không cải thiện khả năng tìm evidence, chỉ cải thiện thứ hạng
-và độ đúng phạm vi**: q14 ở B lấy về chunk `year=2025` (sai phạm vi, dù vẫn trúng tài liệu), ở C
-bị loại nên top-1 thành đúng trang.
+và độ đúng phạm vi**: ở B, rank 1 của q14 là một chunk `year=2025` (`2505.22866v1` p32) trong khi
+chunk đúng nằm ở rank 2; ở C chunk sai phạm vi bị loại nên rank 1 là đúng trang gold.
 
 ### 4.3 Hai ví dụ sai cụ thể
 
 1. **q06 (B) — lỗi chunking.** Câu hỏi: regret của thuật toán admission control scale thế nào
-   theo số job tối đa. Evidence nằm trên `2308.02391v1` p1 nhưng bị **tách qua 2 chunk** vì câu
-   vắt qua ranh giới layout block; top-3 trả về p1, p19, p18 của cùng tài liệu. Đây là lỗi thật
-   của cách gom đoạn, không phải của model.
+   theo số job tối đa. Trang gold `2308.02391v1` p1 có 3 chunk nhưng **không chunk nào chứa trọn
+   câu evidence** (câu bị cắt qua ranh giới layout block); top-3 trả về p1, p19, p18 của cùng tài
+   liệu. Đây là lỗi thật của cách gom đoạn, không phải của model. Ở A, q06 cũng miss nhưng vì lý
+   do khác: evidence nguyên vẹn trong một chunk ở **rank 7**, chỉ ngoài top-3.
 2. **q01 (A) — lỗi xếp hạng.** Evidence nguyên vẹn trong một chunk của `2004.01625v2` p1, nhưng
    top-3 toàn bộ là `2506.17155v2` (một bài khác). Cosine của chunk đúng 0,687 so với 0,791 của
    top-1: model không phân biệt được abstract của hai bài cùng chủ đề. Tăng top-k không cứu được
